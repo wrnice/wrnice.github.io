@@ -21,8 +21,12 @@
 
 <script>
 L.mapbox.accessToken = 'pk.eyJ1IjoicG9seXBhIiwiYSI6ImNqaWxxZG1yazA3enEzbGs3NGZ6MjZyc28ifQ.-EdHZpVfW_gfHC_i7dFRGA';
-var map = L.mapbox.map('map', 'mapbox.streets')
-    .setView([38.89399, -77.03659], 17);
+var map = new mapboxgl.Map({
+    container: 'map',
+    zoom: 9,
+    center: [137.9150899566626, 36.25956997955441],
+    style: 'mapbox://styles/mapbox/satellite-v9'
+});
 
 var featureGroup = L.featureGroup().addTo(map);
 
