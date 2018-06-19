@@ -49,7 +49,7 @@ function showPolygonAreaEdited(e) {
   });
 }
 function showPolygonArea(e) {
-  featureGroup.clearLayers();
+  //featureGroup.clearLayers();
   featureGroup.addLayer(e.layer);
   e.layer.bindPopup((LGeo.area(e.layer) ).toFixed(2) + ' m<sup>2</sup>');
   e.layer.openPopup();
