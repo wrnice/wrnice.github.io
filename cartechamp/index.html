@@ -33,20 +33,27 @@ var map = new mapboxgl.Map({
     style: 'mapbox://styles/mapbox/satellite-v9'
 });
 
-var featureGroup = L.featureGroup().addTo(map);
+map.on('load', function () {
 
-var drawControl = new L.Control.Draw({
-  edit: {
-    featureGroup: featureGroup
-  },
-  draw: {
-    polygon: true,
-    polyline: false,
-    rectangle: false,
-    circle: false,
-    marker: false
-  }
-}).addTo(map);
+  var featureGroup = L.featureGroup().addTo(map);
+
+  var drawControl = new L.Control.Draw({
+    edit: {
+      featureGroup: featureGroup
+    },
+    draw: {
+      polygon: true,
+      polyline: false,
+      rectangle: false,
+      circle: false,
+      marker: false
+    }
+  }).addTo(map);  
+  
+  
+}
+
+
 
 map.on('draw:created', showPolygonArea);
 map.on('draw:edited', showPolygonAreaEdited);
