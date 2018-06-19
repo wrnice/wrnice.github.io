@@ -23,7 +23,7 @@
 <script>
 L.mapbox.accessToken = 'pk.eyJ1IjoicG9seXBhIiwiYSI6ImNqaWxxZG1yazA3enEzbGs3NGZ6MjZyc28ifQ.-EdHZpVfW_gfHC_i7dFRGA';
 var map = L.mapbox.map('map', 'mapbox.satellite')
-    .setView([46.45894,0.05769], 18);
+    .setView([46.45894,0.05769], 19);
 
 var featureGroup = L.featureGroup().addTo(map);
 
@@ -51,7 +51,7 @@ function showPolygonAreaEdited(e) {
 function showPolygonArea(e) {
   featureGroup.clearLayers();
   featureGroup.addLayer(e.layer);
-  e.layer.bindPopup((LGeo.area(e.layer) / 1000000).toFixed(2) + ' km<sup>2</sup>');
+  e.layer.bindPopup((LGeo.area(e.layer) ).toFixed(2) + ' m<sup>2</sup>');
   e.layer.openPopup();
 }
 </script>
